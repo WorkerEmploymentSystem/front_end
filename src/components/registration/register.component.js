@@ -164,7 +164,7 @@ export default class Register extends Component {
 
   onChangeAddress(e) {
     this.setState({
-      address: { city: e.target.value, street: this.setState.streetvar, houseNo: this.setState.housevar }
+      address: { city: e.target.value, street: e.target.value, houseNo: e.target.value }
     });
   }
 
@@ -376,9 +376,7 @@ export default class Register extends Component {
                     className="form-control"
                     name="houseNo"
                     value={this.state.address.houseNo}
-                    onChange={(e) => {
-                      housevar = e.target.value;
-                    }}
+                    onChange={this.onChangeAddress} 
                     required
                   />
                   </label>
@@ -388,9 +386,7 @@ export default class Register extends Component {
                     className="form-control"
                     name="street"
                     value={this.state.address.street}
-                    onChange={(e) => {
-                      streetvar = e.target.value;
-                    }}
+                    onChange={this.onChangeAddress} 
                     required
                   />
                   </label>
