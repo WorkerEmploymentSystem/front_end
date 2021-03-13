@@ -26,7 +26,7 @@ const Home = () => {
                 <Row>
                     <Col md={4}>
                         <ServiceCard service="Electrician"
-                            description="In day and time, we are completely dependent on
+                            description="In this day and time, we are completely dependent on
                         electricity. Any small breakdown or malfunction can affect our everyday schedule.
                         Our skilled electricians are one solution to all your problems"
                             image="https://image.flaticon.com/icons/png/512/732/732564.png" />
