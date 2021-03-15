@@ -4,6 +4,7 @@ import axios from 'axios';
 import base_url from '../../api/bootapi';
 import { toast, ToastContainer } from 'react-toastify';
 import { useHistory } from 'react-router-dom';
+import userService from "../../authentication/user.service";
 
 
 const ViewProfile = (props) => {
@@ -19,13 +20,16 @@ const ViewProfile = (props) => {
     const [street, setStreet] = useState("");
     const [city, setCity] = useState("");
 
+    const [data, setData]=useState("");
+
     useEffect(() => {
         getUserDetails();
     });
 
     const getUserDetails = () => {
-        axios.get(`${base_url}/user/details/${id}`).then(
+       userService.getPublicContent(id).then(
             (response) => {
+                setData(response.data);
                 setFirstName(response.data.fName);
                 setLastName(response.data.lName);
                 setEmail(response.data.email);

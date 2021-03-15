@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import { Redirect } from "react-router-dom";
 import AuthService from "../../authentication/auth.service";
 import userService from "../../authentication/user.service";
+import NavbarProfile from "../profile/NavbarProfile";
 
 export default class Profile extends Component {
   constructor(props) {
@@ -35,6 +36,7 @@ export default class Profile extends Component {
       <div className="container">
         {(this.state.userReady) ?
           <div>
+            <NavbarProfile id={this.state.data.userId} name={this.state.data.fName}/>
             <header className="jumbotron">
               <h3>
                 <strong>HI {this.state.data.phoneNo}</strong> Profile
