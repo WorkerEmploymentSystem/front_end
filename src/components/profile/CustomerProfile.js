@@ -1,4 +1,4 @@
-import React, { Component, useEffect, useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import NavbarProfile from './NavbarProfile';
 import axios from 'axios';
 import base_url from '../../api/bootapi';

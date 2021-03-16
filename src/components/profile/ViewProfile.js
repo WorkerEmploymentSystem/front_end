@@ -1,9 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { Button, Container, Form, FormGroup, Input } from 'reactstrap';
-import axios from 'axios';
-import base_url from '../../api/bootapi';
-import { toast, ToastContainer } from 'react-toastify';
-import { useHistory } from 'react-router-dom';
+import { Button } from 'reactstrap';
 import userService from "../../authentication/user.service";
 
 
@@ -12,7 +8,7 @@ const ViewProfile = (props) => {
     const [firstName, setFirstName] = useState("");
     const [lastName, setLastName] = useState("");
     const [email, setEmail] = useState("");
-    const [password, setPassword] = useState("");
+    const [setPassword] = useState("");
     const [dateOfBirth, setDateOfBirth] = useState("");
     const [phoneNo, setPhoneNo] = useState("");
     const [gender, setGender] = useState("");
@@ -20,7 +16,7 @@ const ViewProfile = (props) => {
     const [street, setStreet] = useState("");
     const [city, setCity] = useState("");
 
-    const [data, setData]=useState("");
+    const [setData]=useState("");
 
     useEffect(() => {
         getUserDetails();

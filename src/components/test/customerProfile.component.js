@@ -4,7 +4,7 @@ import AuthService from "../../authentication/auth.service";
 import userService from "../../authentication/user.service";
 import NavbarProfile from "../profile/NavbarProfile";
 
-export default class Profile extends Component {
+export default class CustomerProfile extends Component {
   constructor(props) {
     super(props);
 

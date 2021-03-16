@@ -7,19 +7,18 @@ import Home from './components/home/Home';
 import Login from './components/login/Login';
 import AddCustomer from './components/registration/AddCustomer';
 import AddWorker from './components/registration/AddWorker';
-import CustomerProfile from './components/profile/CustomerProfile';
 import WorkerProfile from './components/profile/WorkerProfile';
 import AddWorkDesc from './components/profile/AddWorkDesc'
 import ViewProfile from './components/profile/ViewProfile';
 import Register from './components/registration/register.component';
-import Profile from './components/test/profile.component';
+import CustomerProfile from './components/test/customerProfile.component';
 
 function App() {
   return (
     <div>
       <Router>
         <Route path="/" component={Home} exact />
-        <Route path="/profile" component={Profile} exact />
+        <Route path="/profile/" component={CustomerProfile} exact />
         <Route path="/profile/ViewProfile/:id" component={ViewProfile} exact />
         <Route path="/add-customer" component={Register} exact />
         <Route path="/add-worker" component={AddWorker} exact />

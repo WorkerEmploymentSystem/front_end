@@ -26,7 +26,8 @@ export default class Login extends Component {
       username: "",
       password: "",
       loading: false,
-      message: ""
+      message: "",
+      currentUser : { username : ""}
     };
   }
 
@@ -55,8 +56,10 @@ export default class Login extends Component {
     if (this.checkBtn.context._errors.length === 0) {
       AuthService.login(this.state.username, this.state.password).then(
         () => {
-          console.log("Success");
-          this.props.history.push("/profile");
+          const data = AuthService.getCurrentUser();
+          const category = data.roles.map((role) => {return (role)});
+          var url = `/profile/${category}`;
+          this.props.history.push(url);
           window.location.reload();
         },
         error => {
@@ -81,6 +84,7 @@ export default class Login extends Component {
   }
 
   render() {
+
     return (
       <div className="col-md-12">
         <div className="card card-container">

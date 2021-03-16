@@ -88,7 +88,6 @@ export default class Register extends Component {
     this.onChangePhNo = this.onChangePhNo.bind(this);
     this.onChangeWorkCat = this.onChangeWorkCat.bind(this);
     this.onChangeAddress = this.onChangeAddress.bind(this);
-    this.onChangeRole = this.onChangeRole.bind(this);
 
     this.state = {
       username: "",
@@ -100,7 +99,7 @@ export default class Register extends Component {
       dob: "",
       phoneNo: "",
       address: { city: "", street: "", houseNo: "" },
-      roles: ["CUSTOMER"],
+      role: ["cust"],
       workCategory: "",
       successful: false,
       message: "",
@@ -110,7 +109,7 @@ export default class Register extends Component {
 
   onChangeUsername(e) {
     this.setState({
-      username: e.target.value
+      username: e.target.value,
     });
   }
 
@@ -168,13 +167,6 @@ export default class Register extends Component {
     });
   }
 
-  onChangeRole(e) {
-    this.setState({
-      roles: e.target.value
-    });
-  }
-
-
   handleRegister(e) {
     e.preventDefault();
 
@@ -196,7 +188,7 @@ export default class Register extends Component {
         this.state.address,
         this.state.phoneNo,
         this.state.gender,
-        this.state.roles,
+        this.state.role,
         this.state.workCategory,
       ).then(
         response => {
