@@ -18,7 +18,7 @@ function App() {
     <div>
       <Router>
         <Route path="/" component={Home} exact />
-        <Route path="/profile/" component={CustomerProfile} exact />
+        <Route path="/profile/CUSTOMER" component={CustomerProfile} exact />
         <Route path="/profile/ViewProfile/:id" component={ViewProfile} exact />
         <Route path="/add-customer" component={Register} exact />
         <Route path="/add-worker" component={AddWorker} exact />

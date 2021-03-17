@@ -12,6 +12,10 @@ class UserService {
     return axios.get(API_URL + 'user', { headers: authHeader() });
   }
 
+  addWorkDesc(userId) {
+    return axios.post(`${API_URL}/user/regWorkDesc/${userId}`, { headers: authHeader() });
+  }
+
   getModeratorBoard() {
     return axios.get(API_URL + 'mod', { headers: authHeader() });
   }

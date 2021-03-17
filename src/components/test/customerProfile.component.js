@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import { Redirect } from "react-router-dom";
 import AuthService from "../../authentication/auth.service";
 import userService from "../../authentication/user.service";
+import AddWorkDesc from "../profile/AddWorkDesc";
 import NavbarProfile from "../profile/NavbarProfile";
 
 export default class CustomerProfile extends Component {
@@ -64,8 +65,11 @@ export default class CustomerProfile extends Component {
               {currentUser.roles &&
                 currentUser.roles.map((role, index) => <li key={index}>{role}</li>)}
             </ul>
+            <div>
+              <AddWorkDesc id={currentUser.id}/>
+            </div>
           </div> : null}
-      </div>
+        </div>
     );
   }
 }

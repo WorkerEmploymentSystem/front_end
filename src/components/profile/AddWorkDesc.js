@@ -4,13 +4,14 @@ import axios from 'axios';
 import base_url from '../../api/bootapi';
 import { toast, ToastContainer } from 'react-toastify';
 import { useHistory } from 'react-router-dom';
+import authHeader from '../../authentication/auth-header';
 
 const AddWorkDesc = (props) => {
     useEffect(() => {
         document.title = "Add work Description || LMS"
     }, []);
 
-    const id = props.match.params.id;
+    const id = props.id;
 
     const [workDescription, addWork] = useState({});
 
@@ -31,9 +32,11 @@ const AddWorkDesc = (props) => {
 
     //creating function to add work desc.
     const postDatatoServer = (data) => {
-        axios.post(`${base_url}/user/regWorkDesc/${id}`, data).then(
+        axios.post(`${base_url}/user/regWorkDesc/${id}`,{data},{ headers: authHeader() }).then(
             (response) => {
-                console.log(response.data);
+                if(response.data.acessToken){
+                    localStorage.setItem("regWorkDesc", JSON.stringify(response.data));
+                }
                 console.log("success");
                 toast.success("Work Desc Added Successfully  :");
                 redirect();
